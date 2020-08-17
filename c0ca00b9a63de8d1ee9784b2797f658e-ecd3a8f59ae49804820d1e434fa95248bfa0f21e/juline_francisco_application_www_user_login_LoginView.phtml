@@ -1,0 +1,23 @@
+<script src="<?= $wwwUrl ?>/js/class/FormValidate.js"></script>
+<form class="generic-form" method="post">
+    <aside class="error-message hidden">
+        <?php if( $error ): ?>
+            <p><?= $error ?></p>
+        <?php endif ?>
+    </aside>
+    <fieldset>
+        <legend>Log in</legend>
+        <ul>
+            <li>
+                <label for="login-email">Email</label>
+                <input type="text" name="email" id="login-email" value="<?= $email ?>">
+            </li>
+            <li>
+                <label for="login-password">Password</label>
+                <input type="password" name="password" id="login-password" value="<?= $password ?>>">
+            </li>
+        </ul>
+        <input type="submit" class="btn-submit" name="submit_btn" value="Submit">
+        <input type="reset"  class="btn-reset" name="reset_btn" value="Reset">
+    </fieldset>
+</form>

@@ -1,0 +1,13 @@
+<section id="training">
+    <h2>It's not about looking good it's about feeling good</h2>
+    <img src="<?= $wwwUrl ?>/images/training.jpg" alt="training"  class="responsive">
+    <h3>Categories</h3>
+    <!-- Links to articles classified by category -->
+    <ul id="category-align">
+        <?php foreach($categories as $category) :?>
+            <li class="category">
+                <a href="<?= $requestUrl?>/index.php/category/training?id=<?= $category['id']?>" title="<?= htmlentities($category['title']) ?>"> <?= htmlentities($category['title']) ?></a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</section>

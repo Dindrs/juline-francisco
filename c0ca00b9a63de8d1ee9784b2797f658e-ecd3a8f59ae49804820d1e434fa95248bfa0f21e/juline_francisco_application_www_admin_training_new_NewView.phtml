@@ -1,0 +1,99 @@
+<script src="<?= $wwwUrl ?>/js/class/FormValidate.js"></script>
+<a href="<?= $requestUrl?>/index.php/Admin/training/edition"><i class="fa fa-arrow-left"></i></a>
+<!-- Update article -->
+<?php if(!empty($training)) : ?>
+<form class="generic-form" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <aside class="error-message hidden">
+            <?php if( $error ): ?>
+                <p><?= $error ?></p>
+            <?php endif ?>
+        </aside>
+        <legend>Update article</legend>
+        <ul>
+            <li>
+                <input type="hidden" name="id" value="<?= $training['id'] ?>">
+            </li>
+            <li>
+                <label for="title" class="required">Title</label>
+                <input type="text" name="title" id="title" data-required data-name="title" value="<?= $training['title'] ?>">
+            </li>
+            <li>
+                <label for="content" class="required">Content</label>
+                <textarea name="content" id="content" data-required data-name="content"><?= $training['content'] ?></textarea>
+            </li>
+            <li>
+                <img src="<?= $wwwUrl ?>/images/training/<?= $training['image']?>" alt="<?= $training['image'] ?>" class="small-img responsive">
+            </li>
+            <li>
+                <label for="category-select" class="required">Category</label>
+                <select name="category" id="category-select" data-required data-name="category">
+                    <option value="<?= $training['category']?>"><?= $training['category']?></option>
+                    <?php foreach($categories as $category):?>
+                        <option value="<?= $category['title']?>"><?= $category['title']?></option>
+                    <?php endforeach ?>
+                </select>
+            </li>
+        </ul>
+        <input class="btn-submit" type="submit" name="btn_update_article" value="Update">
+        <input class="btn-reset" type="reset" name="reset" value="Reset">
+    </fieldset>
+</form>
+    <!-- New article -->
+<?php else: ?>
+<form class="generic-form" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <aside class="error-message hidden">
+            <?php if( $error ): ?>
+                <p><?= $error ?></p>
+            <?php endif ?>
+        </aside>
+        <legend>Add new workout article</legend>
+        <ul>
+            <li>
+                <label for="new-title" class="required">Title</label>
+                <input type="text" name="title" id="new-title" data-required data-name="title" value="<?= $title ?>">
+            </li>
+            <li>
+                <label for="new-content" class="required">Content</label>
+                <textarea name="content" id="new-content" data-required data-name="content"><?= $content ?></textarea>
+            </li>
+            <li>
+                <label for="image" class="required">Photo</label>
+                <input type="file" name="image" id=image" data-required data-name="image">
+            </li>
+            <li>
+                <label for="new-category-select" class="required">Category</label>
+                <select name="category" id="new-category-select" data-required data-name="category">
+                    <option value="">Please choose an option</option>
+                    <?php foreach($categories as $category):?>
+                        <option value="<?= $category['title']?>"><?= $category['title']?></option>
+                    <?php endforeach ?>
+                </select>
+            </li>
+        </ul>
+        <input class="btn-submit" type="submit" name="btn_new_article" value="Add">
+        <input class="btn-reset" type="reset" name="reset" value="Reset">
+    </fieldset>
+</form>
+<?php endif ?>
+
+<script src="https://cdn.tiny.cloud/1/thf0235i7u8i4tqw5oakq1cjqqoaz5w8guff14j15rq2r6pp/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    $(()=>
+        tinymce.init({
+            selector: 'textarea',
+            menubar: false,
+            toolbar: 'undo redo|  fontselect fontsizeselect formatselect|' +
+                     'bold italic underline strikethrough| forecolor backcolor| alignleft aligncenter' +
+                     'alignright alignjustify| bullist numlist outdent indent',
+            style_formats: [
+                {title: 'Title', format: 'h3'},
+                {title: 'Title', format: 'h4'},
+                {title: 'Title', format: 'h5'},
+                {title: 'Title', format: 'h6'},
+            ],
+            block_formats: 'Paragraph=p; Heading =h3; Heading =h4; Heading =h5; Heading =h6',
+        })
+    );
+</script>

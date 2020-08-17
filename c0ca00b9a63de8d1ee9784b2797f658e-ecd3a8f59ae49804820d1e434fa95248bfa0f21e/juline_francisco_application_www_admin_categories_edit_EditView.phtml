@@ -1,0 +1,31 @@
+<section>
+    <h2>Categories Edition</h2>
+    <a href="<?= $requestUrl?>/index.php/admin" title="return"><i class="fa fa-arrow-left"></i></a>
+    <a href="<?= $requestUrl?>/index.php/admin/categories/add" title="add new"><i class="fa fa-plus-square"></i></a>
+    <table class="generic-table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($categories as $category) :?>
+            <tr>
+                <td><a href="<?= $requestUrl ?>/index.php/category/training?id=<?= $category['id']?>" title="view articles"><?= $category['title']?></a></td>
+                <td>
+                    <a href="<?= $requestUrl ?>/index.php/admin/categories/edit?action=remove&category_id=<?= $category['id']?>" data-confirm title="delete">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="<?= $requestUrl ?>/index.php/admin/categories/edit?action=edit&category_id=<?= $category['id']?>" title="edit">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+        </tbody>
+    </table>
+</section>

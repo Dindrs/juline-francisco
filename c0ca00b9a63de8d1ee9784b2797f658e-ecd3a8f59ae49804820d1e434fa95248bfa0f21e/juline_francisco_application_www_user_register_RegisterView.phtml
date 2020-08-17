@@ -1,0 +1,32 @@
+<script src="<?= $wwwUrl ?>/js/class/FormValidate.js"></script>
+<a href="<?= $requestUrl?>/index.php/admin/users"><i class="fa fa-arrow-left"></i></a>
+<form class="generic-form" method="post">
+    <aside class="error-message hidden">
+        <?php if($error): ?>
+            <p><?= $error ?></p>
+        <?php endif ?>
+    </aside>
+    <fieldset>
+        <legend>New user</legend>
+        <ul>
+            <li>
+                <label for="last-name">Last name</label>
+                <input type="text" name="lastname" id="last-name" data-required data-name="lastname" data-type="string" value="<?= $lastname ?>">
+            </li>
+            <li>
+                <label for="first-name">First name</label>
+                <input type="text" name="firstname" id="first-name" data-required data-name="firstname" data-type="string" value="<?= $firstname ?>">
+            </li>
+            <li>
+                <label for="new-user-email">email</label>
+                <input type="text" name="email" id="new-user-email" data-required data-name="email" data-type="email" value="<?= $email ?>">
+            </li>
+            <li>
+                <label for="new-user-password">password</label>
+                <input type="password" name="password" id="new-user-password" data-required data-name="password" data-type="password" value="<?= $password ?>">
+            </li>
+        </ul>
+        <input type="submit" class="btn-submit" name="btn_new_user" value="submit">
+        <input type="reset" class="btn-reset name="reset_btn" value="reset">
+    </fieldset>
+</form>

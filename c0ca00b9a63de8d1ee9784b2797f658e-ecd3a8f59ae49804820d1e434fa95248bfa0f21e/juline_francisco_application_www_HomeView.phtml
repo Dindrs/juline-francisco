@@ -1,0 +1,42 @@
+<?php if($flashbag->hasmessages()) :?>
+    <aside id="flashbag" class="user-interface flashbag">
+        <ul>
+            <?php foreach($flashbag->fetchMessages() as $message): ?>
+                <li><?= $message ?></li>
+            <?php endforeach ?>
+        </ul>
+    </aside>
+<?php endif ?>
+<div id="homepage">
+    <div id="pics">
+        <img src="<?= $wwwUrl ?>/images/home1.jpg" alt="exercising lake view" class="responsive">
+        <img src="<?= $wwwUrl ?>/images/home2.jpg" alt="exercising bridge" class="responsive">
+        <img src="<?= $wwwUrl ?>/images/home3.jpg" alt="jumping" class="responsive">
+        <img src="<?= $wwwUrl ?>/images/home4.jpg" alt="exercising park" class="responsive">
+    </div>
+</div>
+
+<!-- Website purpose-->
+<section>
+    <h1>Workout <span>by Juline Francisco</span></h1>
+    <article id="about-ws">
+        <div id="text-main">
+            <h2>Personal Training</h2>
+            <p>Where do we start?</p>
+            <p>You know you need to change your daily routines, to exercise, to eat properly, still you don't do anything because you don't know where to start. </p>
+            <p>Getting in shape and introducing a new habit is sometimes difficult, either because we don't have time or because we find it boring, or we just don't know to do. What's your excuse?</p>
+            <p>Exercising a few minutes a day, will not only change your body confidence but also will it change your mindset for good. If you want to feel more energetic, keep that in mind.</p>
+            <p>Let's not forget that investing in your health and fitness, will make you feel brand new.</p>
+        </div>
+        <img src="<?= $wwwUrl ?>/images/home5.jpg" alt="stretching" class="home-img responsive">
+    </article>
+    <p class="catchy-phrase">Our results begin with a feeling that makes us take action. Healthy mind, healthy body.</p>
+    <nav>
+        <a href="https://www.instagram.com/julinefrancisco"><i class="fa fa-instagram round-bg"></i></a>
+        <a href="https://www.linkedin.com/in/juline-francisco-89173b160"><i class="fa fa-linkedin round-bg"></i></a>
+        <a href="https://www.facebook.com/julinepersonaltrainer/"><i class="fa fa-facebook round-bg"></i></a>
+        <a href="https://www.youtube.com/channel/UC1QsvU70xyxqnMsGdv8H-2w"><i class="fa fa-youtube round-bg"></i></a>
+    </nav>
+</section>
+
+

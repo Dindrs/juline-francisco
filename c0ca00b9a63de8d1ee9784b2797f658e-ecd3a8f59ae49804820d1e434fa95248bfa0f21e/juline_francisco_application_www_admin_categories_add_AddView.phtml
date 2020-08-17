@@ -1,0 +1,52 @@
+<script src="<?= $wwwUrl ?>/js/class/FormValidate.js"></script>
+<a href="<?= $requestUrl?>/index.php/Admin/categories/edit"><i class="fa fa-arrow-left"></i></a>
+
+<!-- Update article -->
+<?php if(!empty($category)) : ?>
+    <form class="generic-form" method="post">
+        <!-- Display errors -->
+        <aside class="error-message hidden">
+            <?php if( $error ): ?>
+                <p><?= $error ?></p>
+            <?php endif ?>
+        </aside>
+        <fieldset>
+            <legend>Update category</legend>
+            <ul>
+                <li>
+                    <input type="hidden" name="id" value="<?= $category['id'] ?>">
+                </li>
+                <li>
+                    <label for="title-update">Name</label>
+                    <input type="text" name="title" id="title-update" data-required data-name="title" value="<?= $category['title'] ?>">
+                </li>
+            </ul>
+            <input class="btn-submit" type="submit" name="btn_update_category" value="Update">
+            <input class="btn-reset" type="reset" name="reset" value="Reset">
+        </fieldset>
+    </form>
+    <!-- New article -->
+<?php else: ?>
+    <form class="generic-form" method="post">
+        <!-- Display errors -->
+        <aside class="error-message hidden">
+            <?php if( $error ): ?>
+                <p><?= $error ?></p>
+            <?php endif ?>
+        </aside>
+        <fieldset>
+            <legend>Add new category</legend>
+            <ul>
+                <li>
+                    <label for="title-new">Name</label>
+                    <input type="text" name="title" id="title-new" data-required data-name="title" value="<?= $title ?>">
+                </li>
+
+            </ul>
+            <input class="btn-submit" type="submit" name="btn_new_category" value="Add">
+            <input class="btn-reset" type="reset" name="reset" value="Reset">
+        </fieldset>
+    </form>
+<?php endif ?>
+
+

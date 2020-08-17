@@ -1,0 +1,20 @@
+<?php if($flashbag->hasmessages()) :?>
+    <aside id="flashbag" class="user-interface flashbag">
+        <ul>
+            <?php foreach($flashbag->fetchMessages() as $message): ?>
+                <li><?= $message ?></li>
+            <?php endforeach ?>
+        </ul>
+    </aside>
+<?php endif ?>
+
+<p class="welcome">Welcome <?= htmlentities($session->getFullName())?></p>
+<nav id="edit" class="center">
+    <ul>
+        <li><a href="<?= $requestUrl?>/index.php/admin/categories/edit">Category editor</a>
+        <li><a href="<?= $requestUrl?>/index.php/admin/training/edition">Training editor</a>
+        <li><a href="<?= $requestUrl?>/index.php/admin/users">Users</a></li>
+        <li><a href="<?= $requestUrl?>/index.php/user/logout">Logout</a></li>
+    </ul>
+</nav>
+

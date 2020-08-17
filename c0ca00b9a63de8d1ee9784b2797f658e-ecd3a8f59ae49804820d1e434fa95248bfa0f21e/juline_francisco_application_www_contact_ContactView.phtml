@@ -1,0 +1,38 @@
+<script src="<?= $wwwUrl ?>/js/class/FormValidate.js"></script>
+<h2>Contact me</h2>
+<form class="generic-form" method="post">
+    <aside class="error-message hidden">
+        <?php if( $error ): ?>
+            <p><?= $error ?></p>
+        <?php endif ?>
+    </aside>
+    <fieldset>
+        <legend>For more info</legend>
+        <ul>
+            <li>
+                <label for="user_message_name" class="required">Name</label>
+                <input type="text" name="name" id="user_message_name" data-required data-name="name" data-type="string" placeholder="Name" value="<?= $name ?>">
+            </li>
+            <li>
+                <label for="user_message_email" class="required">Email</label>
+                <input type="text" name="email" id="user_message_email" data-required data-name="email" data-type="email" placeholder="Email" value="<?= $email ?>">
+            </li>
+            <li>
+                <label for="subject" class="required">Subject</label>
+                <select name="subject" id="subject" data-required data-name="subject">
+                    <option value="">Please choose an option</option>
+                    <option value ="personal_training_follow_up">Personal training follow up</option>
+                    <option value ="recipes">Recipes</option>
+                    <option value ="complaints">Complaints</option>
+                    <option value ="other">Other</option>
+                </select>
+            </li>
+            <li>
+                <label for="question" class="required">Question</label>
+                <textarea name="question" id="question" data-required data-name="question" placeholder="Question"><?= $question ?></textarea>
+            </li>
+        </ul>
+        <input class="btn-submit" type="submit" name="send_form" value="Send">
+        <input class="btn-reset" type="reset" name="reset_form">
+    </fieldset>
+</form>

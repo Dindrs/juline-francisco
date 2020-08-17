@@ -1,0 +1,39 @@
+<section>
+    <h2>Training Edition</h2>
+    <a href="<?= $requestUrl?>/index.php/Admin" title="return"><i class="fa fa-arrow-left"></i></a>
+    <a href="<?= $requestUrl?>/index.php/Admin/training/new" title="add new"><i class="fa fa-plus-square"></i></a>
+    <table class="container generic-table" >
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($training as $training) :?>
+            <tr>
+                <td>
+                    <!-- Link to article -->
+                    <a href="<?= $requestUrl ?>/index.php/category/training?training_id=<?= $training['id']?>" title="view article"><?= $training['title']?></a>
+                </td>
+                <td>
+                    <?= $training['category']?>
+                </td>
+                <td>
+                    <a href="<?= $requestUrl ?>/index.php/admin/training/edition?action=remove&training_id=<?= $training['id']?>" data-confirm title="delete">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="<?= $requestUrl ?>/index.php/admin/training/edition?action=edit&training_id=<?= $training['id']?>" title="edit">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+        </tbody>
+
+    </table>
+</section>

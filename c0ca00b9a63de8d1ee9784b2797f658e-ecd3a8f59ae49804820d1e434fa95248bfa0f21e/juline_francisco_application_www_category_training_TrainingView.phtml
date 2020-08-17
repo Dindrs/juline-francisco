@@ -1,0 +1,33 @@
+<section id="training">
+    <h2>Your mind connected to your body</h2>
+
+    <script src="<?= $wwwUrl?>/js/events.js"></script>
+
+    <a href="<?= $requestUrl?>/index.php/category" title="go back"><i class="fa fa-arrow-left"></i></a>
+        <!-- Display one article -->
+        <?php if(!empty($training_id)) :?>
+            <article class="articles">
+                <h3><?= htmlentities($training['title']) ?></h3>
+                <div>
+                    <?= strip_tags($training['content'], '<p></p><h3></h3><h4></h4><h5></h5><h6></h6>')?>
+                </div>
+                <img src="<?= $wwwUrl ?>/images/training/<?= $training['image']?>" alt="<?= $training['image']?>" class="small-img responsive">
+            </article>
+        <?php else : ?>
+        <!-- Display articles from category -->
+            <?php if(!empty($trainings)):?>
+                <h2><?= $category_name?></h2>
+                <?php foreach($trainings as $training) : ?>
+                    <article class="training-articles">
+                        <h3 class="first-item"><?= htmlentities($training['title']) ?></h3>
+                        <img src="<?= $wwwUrl ?>/images/training/<?= $training['image']?>" alt="<?= $training['image']?>" class="small-img responsive">
+                        <div class="training-content overflow">
+                            <?= strip_tags($training['content'], '<p></p><h3></h3><h4></h4><h5></h5><h6></h6>')?>
+                        </div>
+                    </article>
+                <?php endforeach ?>
+            <?php else : ?>
+                <p>Nothing was found</p>
+            <?php endif ?>
+        <?php endif ?>
+</section>

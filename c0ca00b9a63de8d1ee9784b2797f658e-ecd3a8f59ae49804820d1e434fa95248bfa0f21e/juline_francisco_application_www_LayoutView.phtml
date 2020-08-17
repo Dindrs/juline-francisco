@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Workout by Juline Francisco - personal trainer</title>
+
+        <!-- SEO -->
+        <meta name="description" content="Juline Francisco - Personal Trainer, tips, and healthy recipes. The first step to a healthier body is to take action and leave your comfort zone.">
+        <meta name="keywords" content="workout, recipes, personal training">
+        <meta name="author" content="Juline Francisco">
+
+        <!-- Favicon -->
+        <link rel="icon" href="<?= $wwwUrl ?>/images/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="<?= $wwwUrl ?>/images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="<?= $wwwUrl ?>/images/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="<?= $wwwUrl ?>/images/android-icon-192x192.png">
+
+        <!-- Goggle fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
+        <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
+
+        <!-- Application's stylesheet -->
+        <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
+
+        <!-- JQuery library -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <!-- Cookie consent -->
+
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header>
+            <!-- main navigation -->
+            <nav id="main">
+                <i class="fa fa-bars hidden"></i>
+                <ul id="main-menu">
+                    <li><a href="<?= $requestUrl ?>/index">Home</a></li>
+                    <li><a href="<?= $requestUrl ?>/index/category">Training</a></li>
+                    <li><a href="<?= $requestUrl ?>/index/about">About me</a></li>
+                    <li><a href="<?= $requestUrl ?>/index/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Template display -->
+            <?php include $this->viewData['template']?>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <small>
+                <a href="<?= $requestUrl ?>/index/legal">Privacy Policy</a>
+                <a href="<?= $requestUrl ?>/index.php/admin" id="admin"><i class="fa fa-cogs"></i></a>
+            </small>
+        </footer>
+
+<!-- Main Javascript code -->
+<script src="<?= $wwwUrl ?>/js/main.js"></script>
+<script src="<?= $wwwUrl ?>/js/class/cookiechoices.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('This site uses cookies to offer you a better browsing experience. By continuing to use this website, you agree to their use.', 'Accept all cookies', 'Read more', 'https://juline-francisco.com/index/legal');});</script>
+</body>
+</html>

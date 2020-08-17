@@ -1,0 +1,27 @@
+<section>
+    <h2>Edition</h2>
+    <a href="<?= $requestUrl?>/index.php/Admin" title="return"><i class="fa fa-arrow-left"></i></a>
+    <a href="<?= $requestUrl?>/index.php/user/Register" title="add new"><i class="fa fa-plus-square"></i></a>
+    <table class="container generic-table" >
+        <thead>
+        <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($users as $user) :?>
+            <tr>
+                <td><?= $user['lastname']?></td>
+                <td><?= $user['firstname']?></td>
+                <td>
+                    <a href="<?= $requestUrl ?>/index.php/admin/users?remove&user_id=<?= $user['id']?>" data-confirm>
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+        </tbody>
+    </table>
+</section>
